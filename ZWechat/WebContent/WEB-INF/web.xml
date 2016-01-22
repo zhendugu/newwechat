@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>wechat</display-name>
+
+	<servlet>
+		<servlet-name>CheckScri</servlet-name>
+		<servlet-class>org.weixin4j.web.CheckScri</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckScri</servlet-name>
+		<url-pattern>/CheckScri</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>TokenSer</servlet-name>
+		<servlet-class>org.weixin4j.TokenSer</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TokenSer</servlet-name>
+		<url-pattern>/TokenSer</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CheckUser</servlet-name>
+		<servlet-class>org.weixin4j.web.CheckUser</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckUser</servlet-name>
+		<url-pattern>/CheckUser</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SetMenu</servlet-name>
+		<servlet-class>org.weixin4j.web.SetMenu</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SetMenu</servlet-name>
+		<url-pattern>/SetMenu</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CheckNewId</servlet-name>
+		<servlet-class>org.weixin4j.web.CheckNewId</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckNewId</servlet-name>
+		<url-pattern>/CheckNewId</url-pattern>
+	</servlet-mapping>
+
+	<!-- qna -->
+	<servlet>
+		<servlet-name>ShuaVote</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.ShuaVote</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ShuaVote</servlet-name>
+		<url-pattern>/ShuaVote</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CYFWQVote</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.CYFWQVote</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CYFWQVote</servlet-name>
+		<url-pattern>/CYFWQVote</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>QuestController</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.QuestController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VoteController</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.VoteController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Update</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.Update</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CandidateShow</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.CandidateShow</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OneShow</servlet-name>
+		<servlet-class>org.weixin4j.qna.web.OneShow</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>QuestController</servlet-name>
+		<url-pattern>/QuestController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VoteController</servlet-name>
+		<url-pattern>/VoteController</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Update</servlet-name>
+		<url-pattern>/Update</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CandidateShow</servlet-name>
+		<url-pattern>/CandidateShow</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OneShow</servlet-name>
+		<url-pattern>/OneShow</url-pattern>
+	</servlet-mapping>
+	<!-- qna -->
+
+	<filter>
+		<description>微信消息接入接口</description>
+		<filter-name>WeixinUrlFilter</filter-name>
+		<filter-class>org.weixin4j.filter.WeixinUrlFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WeixinUrlFilter</filter-name>
+		<servlet-name>TokenSer</servlet-name>
+		<url-pattern>/wechat</url-pattern>
+	</filter-mapping>
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/errorPage.jsp</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
